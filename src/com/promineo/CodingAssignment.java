@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Random;
 
 public class CodingAssignment {
-	static Random rand = new Random();
 
 	public static void main(String[] args) {
 		
@@ -15,20 +14,20 @@ public class CodingAssignment {
 		// Create an Array of ints
 		int[] ages = {3,9,23,64,2,8,28,93};
 		
-		//Part a: Subtract first element from the last
+		// Part a: Subtract first element from the last
 		minusFirstFromLast(ages);
 		
-		//Print out elements of the array
+		// Print out elements of the array
 		printIntArray(ages);
 		
-		//Part b: Create a new array
+		// Part b: Create a new array
 		int[] ages2 = {39,82,5,7,2,46,32,25,86};
 		
-		//Call minusFirstFromLast on the second array
+		// Call minusFirstFromLast on the second array
 		minusFirstFromLast(ages2);
 		printIntArray(ages2);
 		
-		//Part c: Iterate through the array and print the average
+		// Part c: Iterate through the array and print the average
 		double mean = takeMean(ages);
 		System.out.println("The average age from 'ages2' is " + mean);
 		
@@ -38,7 +37,7 @@ public class CodingAssignment {
 		// Create an array of names
 		String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
 		
-		//Part a: Calculate the average letters per name and print it to console
+		// Part a: Calculate the average letters per name and print it to console
 		double aveLetters = averageLetter(names);
 		System.out.println("The average number of letters in the 'names[]' array is " + aveLetters);
 		
@@ -46,38 +45,46 @@ public class CodingAssignment {
 		String combinedNames = combineStringWithSpace(names);
 		System.out.println("The names stored in the 'names[]' array are: " + combinedNames + ".");
 		
-		//Question 3: How do you access the last element of any Array?
-		//The last element of any array is accessed using the index 'array.length - 1' (e.g. array[array.length - 1])
+		// Question 3: How do you access the last element of any Array?
+		// The last element of any array is accessed using the index 'array.length - 1' (e.g. array[array.length - 1])
 		System.out.println("The last element of the 'names[]' array is " + names[names.length - 1] + ".");
 		
-		//Question 4: How do you access the first element of any Array?
-		//The first element of any array is accessed using the index of '0'(e.g. array[0])
+		// Question 4: How do you access the first element of any Array?
+		// The first element of any array is accessed using the index of '0'(e.g. array[0])
 		System.out.println("The first element of the 'names[]' array is " + names[0] + ".");
 				
-		//Question 5
+		// Question 5
 		
-		//Create an array of type int called nameLengths.
+		// Create an array of type int called nameLengths.
 		int[] nameLengths = new int[names.length];
 		
-		//Iterate through nameLengths and store the value of the number of letters in each element of names
+		// Iterate through nameLengths and store the value of the number of letters in each element of names
 		for (int i = 0; i < nameLengths.length; i++) {
 			nameLengths[i] = names[i].length();
 		}
 		
-		//Question 6
+		// Question 6
 		
-		//Loop through nameLengths and calculate the sum of all elements.
+		// Loop through nameLengths and calculate the sum of all elements.
+		// Initializing count variable to hold the sum through loop
 		int count = 0;
+		
+		// The variable count will add each integer to itself as the for loop runs through each element of nameLengths
 		for (int n : nameLengths) {
 			count += n;
 		}
+		
+		// Printing 'count' to the console with some text to make it read pretty.
 		System.out.println("The sum of all elements in 'nameLengths[]' is " + count + ".");
 		
-		//Question 7
+		// Question 7
 		
-		//Write a method to concatenate a word a certain number of times to itself
+		// Write a method to concatenate a word a certain number of times to itself
+		// Declaring a string and integer variable and initializing them with the values 'Hello' and '3' respectively
 		String word = "Hello";
 		int n = 3;
+		
+		// Let's declare a new String called newWord to hold 
 		String newWord = combineStringNoSpace(word, n);
 		System.out.println("The word has been concatenized and is now: " + newWord + ".");
 		
