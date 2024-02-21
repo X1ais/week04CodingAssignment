@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Random;
 
 public class CodingAssignment {
-	static Random rand = new Random();
 
 	public static void main(String[] args) {
 		
@@ -16,7 +15,7 @@ public class CodingAssignment {
 		int[] ages = {3,9,23,64,2,8,28,93};
 		
 		//Part a: Subtract first element from the last
-		minusFirstFromLast(ages);
+		ages[ages.length - 1] -= ages[0];
 		
 		//Print out elements of the array
 		printIntArray(ages);
@@ -25,12 +24,12 @@ public class CodingAssignment {
 		int[] ages2 = {39,82,5,7,2,46,32,25,86};
 		
 		//Call minusFirstFromLast on the second array
-		minusFirstFromLast(ages2);
+		ages2[ages2.length - 1] -= ages2[0];
 		printIntArray(ages2);
 		
 		//Part c: Iterate through the array and print the average
 		double mean = takeMean(ages);
-		System.out.println("The average age from 'ages2' is " + mean);
+		System.out.println("The average age from 'ages' is " + mean);
 		
 		// Question 2
 		///////////////////////////////////////
@@ -109,14 +108,14 @@ public class CodingAssignment {
 		double meanOfValues2 = meanOfDouble(values2);
 		boolean isGreater = compareMeans(meanOfValues, meanOfValues2);
 		
-		System.out.println("The average of values greater than the average of values2: " + isGreater + ".");
+		System.out.println("The average of values is greater than the average of values2: " + isGreater + ".");
 		
 		//Question 12
 		
-		//Write a method called willBuyDrink is isHotOutside is true and moneyInPocket is greater than 10.50
+		//Write a method called willBuyDrink, a boolean called isHotOutside and check if double moneyInPocket is greater than 10.50
 		
 		boolean isHotOutside = true;
-		double moneyInPocket = 11.76;
+		double moneyInPocket = 9.76;
 		
 		if (willBuyDrink(isHotOutside, moneyInPocket)) {
 			System.out.println("Given today's temperature and the money in my pocket, I think I will have a drink.");
@@ -147,17 +146,7 @@ public class CodingAssignment {
 		
 	}
 	
-	
-	
-	
-	
-	public static int[] minusFirstFromLast(int[] arr) {
-		int endIndex = arr.length - 1;
-		arr[endIndex] -= arr[0];
-		
-		return arr;
-	}
-	
+
 	public static void printIntArray(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			if (i != 0) {
@@ -239,9 +228,8 @@ public class CodingAssignment {
 		}
 	}
 
-	public static Map<Integer, Double> makeDeposit(Map<Integer, Double> accs, int accNum, double dep){
+	public static void makeDeposit(Map<Integer, Double> accs, int accNum, double dep){
 		double newTotal = accs.get(accNum) + dep;
 		accs.put(accNum, newTotal);
-		return accs;
 	}
 }
